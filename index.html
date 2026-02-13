@@ -3,17 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Purchase Simulator</title>
+  <title>Purchase Data Simulator</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Purchase Simulator</h1>
+  <header class="top">
+    <div>
+      <h1>Purchase Data Simulator</h1>
+      <div class="sub">Upload CSV/TSV → Step through days → Visualize purchases</div>
+    </div>
 
-  <input id="csvFile" type="file" accept=".csv" />
-  <button id="btnTest">Test Button</button>
+    <div class="controls">
+      <input id="csvFile" type="file" accept=".csv,.tsv,.txt" />
+      <button id="btnLoad">Load</button>
+      <button id="btnNext" disabled>Next Day</button>
+      <button id="btnPlay" disabled>Play</button>
+      <button id="btnReset" disabled>Reset</button>
+      <span id="status" class="status"></span>
+    </div>
+  </header>
 
-  <pre id="out"></pre>
+  <main class="main">
+    <canvas id="viz" width="1100" height="520"></canvas>
 
+    <section class="side">
+      <div class="card">
+        <h2>Stats</h2>
+        <div id="stats"></div>
+      </div>
+
+      <div class="card">
+        <h2>Log</h2>
+        <div id="log" class="log"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CSV parser -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
