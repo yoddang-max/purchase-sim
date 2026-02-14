@@ -24,7 +24,9 @@
   </header>
 
   <main class="main">
-    <canvas id="viz" width="1100" height="520"></canvas>
+    <div class="canvasWrap">
+      <canvas id="viz" width="1100" height="520"></canvas>
+    </div>
 
     <section class="side">
       <div class="card">
@@ -38,6 +40,9 @@
       </div>
     </section>
   </main>
+
+  <!-- Tooltip (for hover) -->
+  <div id="tooltip" class="tooltip" style="display:none;"></div>
 
   <!-- CSV parser -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
